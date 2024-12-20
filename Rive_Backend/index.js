@@ -21,6 +21,7 @@ const io = new Server(server, {
 
 let Bool = false;
 let isHealth = 100;
+
 setInterval(() => {
   if (isHealth > 0) {
     if (isHealth < 90) {
@@ -38,6 +39,7 @@ setInterval(() => {
   isHealth = isHealth -3;
   io.sockets.emit('status', {sadness: Bool, health: isHealth});
 }, 2000);
+
 
 
 
